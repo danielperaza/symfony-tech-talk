@@ -2,17 +2,17 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HelloWorldController extends Controller
+class HelloWorldController extends AbstractController
 {
     /**
      * @Route("/hello/{name}", name="hello_world", requirements={"name"="[a-zA-Z]+"})
      */
     public function index($name)
     {
-        return new Response("<h1>Hello ".ucfirst($name)."!</h1>");
+        return $this->render('hello.html.twig', ['name' => $name]);
     }
 }
