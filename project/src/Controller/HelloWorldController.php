@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HelloWorldController extends Controller
 {
     /**
-     * @Route("/hello/world", name="hello_world")
+     * @Route("/hello/{name}", name="hello_world")
      */
-    public function index()
+    public function index($name)
     {
-        return new Response("<h1>Hello World!</h1>");
+        return new Response("<h1>Hello ".ucfirst($name)."!</h1>");
     }
 }
