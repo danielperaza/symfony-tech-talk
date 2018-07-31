@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HelloWorldController extends Controller
 {
     /**
-     * @Route("/hello/{name}", name="hello_world")
+     * @Route("/hello/{name}", name="hello_world", requirements={"name"="[a-zA-Z]+"})
      */
     public function index($name)
     {
